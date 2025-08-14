@@ -1,7 +1,7 @@
 # TapeRecord - Plataforma de Streaming Musical  
 
 <div align="center">
-  <img src="https://github.com/RennerFarias/TapeRecord/raw/main/icon.png" width="150"/>
+  <img src="https://github.com/RennerFarias/TapeRecord/raw/main/icon.png" width="400"/>
 </div>
 
 ## 📌 Descrição  
