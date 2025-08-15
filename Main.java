@@ -14,9 +14,9 @@ public class Main {
         // Verificacao de usuario
 
         int opcaoPrincipal = -1;
-        while(opcaoPrincipal != 5)  {
+        while(opcaoPrincipal != 4)  {
             System.out.println(Menus.PRINCIPAL);
-            opcaoPrincipal = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
+            opcaoPrincipal = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 4);
             int opcao = -1;
 
             switch (opcaoPrincipal) {
