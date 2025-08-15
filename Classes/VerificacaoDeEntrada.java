@@ -14,12 +14,12 @@ public class VerificacaoDeEntrada {
                 if (numero >= minimo && numero <= maximo) {
                     controleDeLoop = false;
                 } else {
-                    System.out.printf("Opcao Invalida. Digite um numero entre %d e %d %n", minimo, maximo);
+                    System.out.printf("\033[91mOpcao Invalida. Digite um numero entre %d e %d\033[m %n", minimo, maximo);
                 }
 
             } catch (InputMismatchException e) {
                 scanner.nextLine();
-                System.out.println("Entrada invalida. Digite um numero");
+                System.out.println("\033[91mEntrada invalida. Digite um numero\033[m");
             }
         } while (controleDeLoop);
 
