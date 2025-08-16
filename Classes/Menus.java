@@ -1,9 +1,9 @@
 package Classes;
 
 public class Menus {
-    public static final String NAME = "\033[1m" + "=".repeat(20) +
-            "\n    Tape Record    \n" +
-            "=".repeat(20) + "\033[m";
+    public static final String NAME = "\033[1m" + "=".repeat(25) +
+            "\n♫\uD83D\uDDAD♫  Tape Record  ♫\uD83D\uDDAD♫     \n" +
+            "=".repeat(25) + "\033[m";
 
     public static final String PRINCIPAL = "\033[37m" + "=".repeat(25) +
             """
