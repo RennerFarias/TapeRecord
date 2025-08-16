@@ -41,6 +41,7 @@ public class Main {
                                 break;
                             case 5:
                                 System.out.println("Voltando ao menu anterior...");
+                                System.out.println(Menus.NAME);
                                 break;
                             default:
                                 System.out.println("\033[5;49;91mOpcao invalida\033[m");
@@ -70,6 +71,7 @@ public class Main {
                                 break;
                             case 5:
                                 System.out.println("Voltando ao menu anterior...");
+                                System.out.println(Menus.NAME);
                                 break;
 
                             default:
