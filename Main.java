@@ -1,12 +1,25 @@
 import Classes.VerificacaoDeEntrada;
 import Classes.Menus;
 
+import javax.swing.plaf.TableHeaderUI;
 import java.util.Scanner;
 
 public class Main {
     private static final String MENSAGEMOPCAO = "Digite sua opcao: ";
 
-    public static void main(String[] args) {
+    private static void tresPontos() throws InterruptedException {
+        Thread.sleep(200);
+        System.out.print(".");
+        Thread.sleep(300);
+        System.out.print(".");
+        Thread.sleep(300);
+        System.out.print(".");
+        Thread.sleep(300);
+        System.out.println();
+
+    }
+
+    public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(Menus.NAME);
@@ -40,7 +53,8 @@ public class Main {
                                 // Excluir playlist
                                 break;
                             case 5:
-                                System.out.println("Voltando ao menu anterior...");
+                                System.out.print("Voltando ao menu anterior");
+                                tresPontos();
                                 System.out.println(Menus.NAME);
                                 break;
                             default:
@@ -70,7 +84,8 @@ public class Main {
                                 // Listar AudioBooks
                                 break;
                             case 5:
-                                System.out.println("Voltando ao menu anterior...");
+                                System.out.print("Voltando ao menu anterior");
+                                tresPontos();
                                 System.out.println(Menus.NAME);
                                 break;
 
@@ -86,7 +101,7 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("...");
+                    tresPontos();
                     scanner.close();
                     break;
 
