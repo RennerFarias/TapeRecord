@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     private static final String MENSAGEMOPCAO = "Digite sua opcao: ";
+    private static final String VOLTARMENU = "\033[1;97mVoltando ao menu anterior\033[m";
 
     private static void tresPontos() throws InterruptedException {
+        System.out.print("\033[1;97m");
         Thread.sleep(200);
         System.out.print(".");
         Thread.sleep(300);
@@ -15,7 +17,7 @@ public class Main {
         Thread.sleep(300);
         System.out.print(".");
         Thread.sleep(300);
-        System.out.println();
+        System.out.println("\033[m");
 
     }
 
@@ -53,7 +55,7 @@ public class Main {
                                 // Excluir playlist
                                 break;
                             case 5:
-                                System.out.print("Voltando ao menu anterior");
+                                System.out.print(VOLTARMENU);
                                 tresPontos();
                                 System.out.println(Menus.NAME);
                                 break;
@@ -84,7 +86,7 @@ public class Main {
                                 // Listar AudioBooks
                                 break;
                             case 5:
-                                System.out.print("Voltando ao menu anterior");
+                                System.out.print(VOLTARMENU);
                                 tresPontos();
                                 System.out.println(Menus.NAME);
                                 break;
