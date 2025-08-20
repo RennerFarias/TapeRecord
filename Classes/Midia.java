@@ -6,11 +6,11 @@ public abstract class Midia {
 
 	private String Titulo;
 	private String Artista;
-	private int Duração;
+	private double Duração;
 	private Genero genero;
 	
 	
-	public Midia(String Titulo, String Artista, int Duração, Genero genero) {
+	public Midia(String Titulo, String Artista, double Duração, Genero genero) {
 		this.Titulo = Titulo;
 		this.Artista = Artista;
 		this.Duração = Duração;
@@ -25,7 +25,7 @@ public abstract class Midia {
 		return Artista;
 	}
 
-	public int getDuração() {
+	public double getDuração() {
 		return Duração;
 	}
 
