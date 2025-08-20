@@ -1,5 +1,3 @@
-package projeto;
-
 public abstract class Midia {
 
 	public static void main(String[] args) {
