@@ -9,7 +9,7 @@ public class Menus {
             """
             
             \033[93m1 - PlayLists
-            2 - Midias
+            2 - Catalogo de midias
             3 - Pesquisar
             4 - Sair
             """ +

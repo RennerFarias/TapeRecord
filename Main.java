@@ -4,10 +4,12 @@ import Classes.Menus;
 import javax.swing.plaf.TableHeaderUI;
 import java.util.Scanner;
 
+import Classes.Constantes;
+
 public class Main {
-    private static final String MENSAGEMOPCAO = "Digite sua opcao: ";
 
     private static void tresPontos() throws InterruptedException {
+        System.out.print("\033[1;97m");
         Thread.sleep(200);
         System.out.print(".");
         Thread.sleep(300);
@@ -15,7 +17,7 @@ public class Main {
         Thread.sleep(300);
         System.out.print(".");
         Thread.sleep(300);
-        System.out.println();
+        System.out.println(Constantes.RESETAR_COR);
 
     }
 
@@ -29,14 +31,14 @@ public class Main {
         int opcaoPrincipal = -1;
         while(opcaoPrincipal != 4)  {
             System.out.println(Menus.PRINCIPAL);
-            opcaoPrincipal = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 4);
+            opcaoPrincipal = VerificacaoDeEntrada.checarIntervalo(scanner, Constantes.MENSAGEMOPCAO, 1, 4);
             int opcao = -1;
 
             switch (opcaoPrincipal) {
                 case 1:
                     while (opcao != 5) {
                         System.out.println(Menus.PLAYLISTS);
-                        opcao = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
+                        opcao = VerificacaoDeEntrada.checarIntervalo(scanner, Constantes.MENSAGEMOPCAO, 1, 5);
 
                         switch (opcao) {
                             case 1:
@@ -53,12 +55,12 @@ public class Main {
                                 // Excluir playlist
                                 break;
                             case 5:
-                                System.out.print("Voltando ao menu anterior");
+                                System.out.print(Constantes.VOLTARMENU);
                                 tresPontos();
                                 System.out.println(Menus.NAME);
                                 break;
                             default:
-                                System.out.println("\033[5;49;91mOpcao invalida\033[m");
+                                System.out.println(Constantes.VERMELHO_NEGRITO + "Opcao invalida" + Constantes.RESETAR_COR);
 
                         }
 
@@ -67,8 +69,8 @@ public class Main {
 
                 case 2:
                     while (opcao != 5) {
-                        System.out.println(Menus.PLAYLISTS);
-                        opcao = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
+                        System.out.println(Menus.LISTAGEMMIDIAS);
+                        opcao = VerificacaoDeEntrada.checarIntervalo(scanner, Constantes.MENSAGEMOPCAO, 1, 5);
 
                         switch (opcao) {
                             case 1:
@@ -84,13 +86,13 @@ public class Main {
                                 // Listar AudioBooks
                                 break;
                             case 5:
-                                System.out.print("Voltando ao menu anterior");
+                                System.out.print(Constantes.VOLTARMENU);
                                 tresPontos();
                                 System.out.println(Menus.NAME);
                                 break;
 
                             default:
-                                System.out.println("\033[5;49;91mOpcao invalida\033[m");
+                                System.out.println(Constantes.VERMELHO_NEGRITO + "Opcao invalida" + Constantes.RESETAR_COR);
                         }
 
 
@@ -106,7 +108,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("\033[5;49;91mOpcao invalida\033[m");
+                    System.out.println(Constantes.VERMELHO_NEGRITO + "Opcao invalida" + Constantes.RESETAR_COR);
 
             }
 

@@ -1,31 +1,41 @@
 public abstract class Midia {
 
-    private String Titulo;  
-    private String Artista;
-    private String Duração;
+	public static void main(String[] args) {
 
-public Midia(String Titulo, String Artista, String Duração) {
-    this.Titulo = Titulo;
-    this.Artista = Artista;
-    this.Duração = Duração;
-}
+	}
 
-public String getTitulo() {
-        return Titulo;
-    }
+	private String Titulo;
+	private String Artista;
+	private double Duracao;
+	private Genero genero;
+	
+	
+	public Midia(String Titulo, String Artista, double Duracao, Genero genero) {
+		this.Titulo = Titulo;
+		this.Artista = Artista;
+		this.Duração = Duracao;
+		this.genero = genero;
+	}
 
-public String getArtista() {
-        return Artista;
-    }
+	public String getTitulo() {
+		return Titulo;
+	}
 
-public String getDuração() {
-        return Duração;
-    }
+	public String getArtista() {
+		return Artista;
+	}
 
-    public String toString() {
-        return "Midia:" +
-                "\n- Titulo='" + Titulo +
-                "\n- Artista='" + Artista +
-                "\n- Duração='" + Duração;
-    }
+	public int getDuracao() {
+		return Duracao;
+	}
+
+	public Genero getGenero() {
+		return genero;
+	}
+	
+	
+	public String toString() {
+		return "Midia:" + "\n- Titulo='" + Titulo + "\n- Artista='" + Artista + "\n- Duracao='" + Duracao + "\n- Genero=" + genero;
+
+	}
 }
