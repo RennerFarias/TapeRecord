@@ -1,11 +1,14 @@
 import Classes.VerificacaoDeEntrada;
 import Classes.Menus;
+import Classes.projeto.Midia;
 
 import javax.swing.plaf.TableHeaderUI;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     private static final String MENSAGEMOPCAO = "Digite sua opcao: ";
+    private static ArrayList<Midia> midias = new ArrayList<>();
 
     private static void tresPontos() throws InterruptedException {
         Thread.sleep(200);
@@ -67,21 +70,21 @@ public class Main {
 
                 case 2:
                     while (opcao != 5) {
-                        System.out.println(Menus.PLAYLISTS);
+                        System.out.println(Menus.MIDIAS);
                         opcao = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
 
                         switch (opcao) {
                             case 1:
-                                // Listar midias
+                                Classes.projeto.Catalogo.listarMidia(scanner, midias);
                                 break;
                             case 2:
-                                // Listar musicas
+                                Classes.projeto.Catalogo.adicionarMidia(scanner, midias);
                                 break;
                             case 3:
-                                // Listar podCasts
+                                Classes.projeto.Catalogo.buscarMidia(scanner, midias);
                                 break;
                             case 4:
-                                // Listar AudioBooks
+                                Classes.projeto.Catalogo.removerMidia(scanner, midias);
                                 break;
                             case 5:
                                 System.out.print("Voltando ao menu anterior");

@@ -28,15 +28,16 @@ public class Menus {
             """ +
             "\033[37m" + "=".repeat(25) + "\033[m";
 
-    public static final String LISTAGEMMIDIAS = "\033[37m" + "=".repeat(25) +
+    public static final String MIDIAS = "\033[37m" + "=".repeat(25) +
             """
             
             \033[93m1 - Listar midias do catalogo
-            2 - Listar musicas
-            3 - Listar Podcasts
-            4 - Listar audioBooks\033[m
+            2 - Adicionar midia ao catalogo
+            3 - Buscar Midia
+            4 - Remover midia do catalogo
             5 - Voltar
-            """ +
+            \033[m
+                    """ +
             "\033[37m" + "=".repeat(25) + "\033[m";
 
     public static void main(String[] args) {
