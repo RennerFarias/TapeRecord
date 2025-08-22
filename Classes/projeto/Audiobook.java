@@ -7,4 +7,9 @@ public class Audiobook extends Midia {
 
 	}
 
+	@Override
+	public String getTipo() {
+		return "Audiobook";
+	}
+
 }

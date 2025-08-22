@@ -1,5 +1,15 @@
 package Classes.projeto;
 
-public class Podcast {
+public class Podcast extends Midia {
+
+	public Podcast(String Titulo, String Artista, double Duracao, Genero genero) {
+		super(Titulo, Artista, Duracao, genero);
+
+	}
+
+	@Override
+	public String getTipo() {
+		return "Podcast";
+	}
 
 }
