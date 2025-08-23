@@ -29,8 +29,8 @@ public abstract class Midia {
 		return Artista;
 	}
 
-	public double getDuração() {
-		return Duracao;
+	public double getDuracao() {
+		return this.Duracao;
 	}
 
 	public Genero getGenero() {

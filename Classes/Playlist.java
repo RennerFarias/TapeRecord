@@ -1,3 +1,7 @@
+package Classes;
+
+import Classes.projeto.Midia;
+
 import java.util.ArrayList;
 import java.util.List;
 
