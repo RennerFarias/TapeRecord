@@ -76,7 +76,10 @@ java Main
 
 ## 👥 Equipe de Desenvolvimento
 
-- **Renner Farias** **Jose Artur** **Igor Lima** **Elian Barros**
+- **Renner Farias**
+- **Jose Artur*
+- **Igor Lima*
+- **Elian Barros*
 
 ## 🎧 Sua música, seu jeito!
 ---
