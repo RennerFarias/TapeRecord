@@ -74,6 +74,9 @@ java Main
 5. **Adicione à Playlist**: Selecione sua playlist e adicione mídias do catálogo
 6. **Gerencie**: Visualize, edite e organize suas playlists
 
+## 👥 Equipe de Desenvolvimento
+
+- **Renner Farias** **Jose Artur** **Igor Lima** **Elian Barros**
 
 ## 🎧 Sua música, seu jeito!
 ---
