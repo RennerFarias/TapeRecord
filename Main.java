@@ -1,8 +1,7 @@
 import Classes.VerificacaoDeEntrada;
-import Classes.Menus;
+import Classes.SistemaUsuario;
 import Classes.projeto.Midia;
 
-import javax.swing.plaf.TableHeaderUI;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -19,58 +18,68 @@ public class Main {
         System.out.print(".");
         Thread.sleep(300);
         System.out.println();
-
     }
 
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(Menus.NAME);
-        // Usario e email
-        // Verificacao de usuario
+        // Header do sistema
+        System.out.println("=========================");
+        System.out.println("♫🗭♫  Tape Record  ♫🗭♫");
+        System.out.println("=========================");
 
+        // Login
+        while (!SistemaUsuario.temUsuarioLogado()) {
+            System.out.println("\n=== LOGIN/CADASTRO ===");
+            System.out.println("1 - Login");
+            System.out.println("2 - Cadastrar");
+            System.out.println("3 - Sair");
+            System.out.println("======================");
+
+            int opcao = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 3);
+
+            switch (opcao) {
+                case 1:
+                    SistemaUsuario.fazerLogin(scanner);
+                    break;
+                case 2:
+                    SistemaUsuario.cadastrarUsuario(scanner);
+                    break;
+                case 3:
+                    System.exit(0);
+                    break;
+            }
+        }
+
+        // Menu principal
         int opcaoPrincipal = -1;
-        while(opcaoPrincipal != 4)  {
-            System.out.println(Menus.PRINCIPAL);
-            opcaoPrincipal = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 4);
+        while (opcaoPrincipal != 5) {
+            System.out.println("\n=== MENU PRINCIPAL ===");
+            System.out.println("1 - Playlists");
+            System.out.println("2 - Midias");
+            System.out.println("3 - Pesquisar");
+            System.out.println("4 - Logout");
+            System.out.println("5 - Sair");
+            System.out.println("======================");
+
+            opcaoPrincipal = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
             int opcao = -1;
 
             switch (opcaoPrincipal) {
                 case 1:
-                    while (opcao != 5) {
-                        System.out.println(Menus.PLAYLISTS);
-                        opcao = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
-
-                        switch (opcao) {
-                            case 1:
-                                // Funcao de criar
-                                break;
-                            case 2:
-                                // Funcao de Listar playlist
-                                break;
-                            case 3:
-                                // Selecionar playlist
-                                // Menu e funcoes de modificar a playlist
-                                break;
-                            case 4:
-                                // Excluir playlist
-                                break;
-                            case 5:
-                                System.out.print("Voltando ao menu anterior");
-                                tresPontos();
-                                System.out.println(Menus.NAME);
-                                break;
-                            default:
-                                System.out.println("\033[5;49;91mOpcao invalida\033[m");
-
-                        }
-
-
-                    }
+                    SistemaUsuario.menuPlaylists(scanner, midias);
+                    break;
 
                 case 2:
                     while (opcao != 5) {
-                        System.out.println(Menus.MIDIAS);
+                        System.out.println("\n=== MIDIAS ===");
+                        System.out.println("1 - Listar midias do catalogo");
+                        System.out.println("2 - Adicionar midia ao catalogo");
+                        System.out.println("3 - Buscar Midia");
+                        System.out.println("4 - Remover midia do catalogo");
+                        System.out.println("5 - Voltar");
+                        System.out.println("==============");
+
                         opcao = VerificacaoDeEntrada.checarIntervalo(scanner, MENSAGEMOPCAO, 1, 5);
 
                         switch (opcao) {
@@ -89,30 +98,26 @@ public class Main {
                             case 5:
                                 System.out.print("Voltando ao menu anterior");
                                 tresPontos();
-                                System.out.println(Menus.NAME);
                                 break;
-
-                            default:
-                                System.out.println("\033[5;49;91mOpcao invalida\033[m");
                         }
-
-
                     }
+                    opcao = -1;
+                    break;
 
                 case 3:
-                    // Pesquisar midia
+                    Classes.projeto.Catalogo.buscarMidia(scanner, midias);
                     break;
 
                 case 4:
+                    SistemaUsuario.logout();
+                    main(args); // Reinicia o programa
+                    return;
+
+                case 5:
                     tresPontos();
                     scanner.close();
                     break;
-
-                default:
-                    System.out.println("\033[5;49;91mOpcao invalida\033[m");
-
             }
-
         }
     }
 }

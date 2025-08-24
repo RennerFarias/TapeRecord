@@ -1,38 +1,48 @@
 package Classes;
 
 import Classes.projeto.Midia;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class Playlist {
-
-    private final String nome;
-    private final List<Midia> midias;
+    private String nome;
+    private ArrayList<Midia> midias;
 
     public Playlist(String nome) {
         this.nome = nome;
         this.midias = new ArrayList<>();
     }
 
+    public String getNome() { return nome; }
+
     public void adicionarMidia(Midia midia) {
         midias.add(midia);
+        System.out.println("Midia adicionada!");
     }
 
     public void removerMidia(String titulo) throws Exception {
         boolean removido = midias.removeIf(m -> m.getTitulo().equalsIgnoreCase(titulo));
         if (!removido) {
-            throw new Exception("Mídia não encontrada! ");
+            throw new Exception("Midia nao encontrada!");
         }
     }
 
     public double calcularDuracaoTotal() {
-        return midias.stream().mapToDouble(Midia::getDuracao).sum();
+        double total = 0;
+        for (Midia midia : midias) {
+            total += midia.getDuracao();
+        }
+        return total;
     }
 
     public void exibirPlaylist() {
         System.out.println("Playlist: " + nome);
-        midias.forEach(System.out::println);
-        System.out.println("Duracao total: " + calcularDuracaoTotal() + " min\n");
+        if (midias.isEmpty()) {
+            System.out.println("Playlist vazia");
+            return;
+        }
+        for (int i = 0; i < midias.size(); i++) {
+            System.out.println((i+1) + " - " + midias.get(i).getTitulo());
+        }
+        System.out.println("Duracao total: " + calcularDuracaoTotal() + " seg");
     }
 }
